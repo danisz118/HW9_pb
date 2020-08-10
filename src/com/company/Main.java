@@ -1,36 +1,25 @@
 package com.company;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.List;
-
 public class Main {
-    public static void iterateCars(Collection<? extends Car> cars) {
 
-        for (Car car : cars) {
-
-            System.out.println("Еще один шаг в цикле пройден!");
-        }
-    }
     public static void main(String[] args) {
-       List<Car> cars = new ArrayList<>();
-       cars.add(new Car());
-       cars.add(new Car());
+        GeometricFigures<Square> set = new GeometricFigures<>();
+        set.add(new Square("Квадрат0"));
+        set.add(new Square("Квадрат1"));
+        set.add(new Square("Квадрат2"));
+        set.forEach(square -> System.out.println(square.getName()) );
+        set.remove(2);
+        set.forEach(square -> System.out.println(square.getName()) );
 
-       List<Ford> ford = new ArrayList<>();
-       ford.add(new Ford());
-       ford.add(new Ford());
 
-       List<Porsche> porsche = new ArrayList<>();
-       porsche.add(new Porsche());
-       porsche.add(new Porsche());
-
-       iterateCars(cars);
-       iterateCars(ford);
-       iterateCars(porsche);
-
-       
-
+        GeometricFigures<Triangle> set2 = new GeometricFigures<>();
+        set2.add(new Triangle("Треугольник0"));
+        set2.add(new Triangle("Треугольник1"));
+        set2.add(new Triangle("Треугольник2"));
+        set2.forEach(triangle -> System.out.println(triangle.getName()));
+        set2.remove(0);
+        set2.remove(1);
+        set2.forEach(triangle -> System.out.println(triangle.getName()));
 	// write your code here
     }
 }
